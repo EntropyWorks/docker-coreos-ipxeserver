@@ -1,9 +1,9 @@
 ---
 # docker-compose.yml
-flask-webserver:
+coreos-ipxeserver:
   build: .
   ports:
-    - 80
+    - "8085:80"
   environment:
     - MODE=dev
   volumes:
