@@ -13,6 +13,7 @@ def coreos_ipxe(userid, instanceid, sshkeyname, channel='stable') :
 		'coreos-ipxe',
 		userid=userid,
 		sshkeyname=sshkeyname,
+		sshkey=key(userid, sshkeyname),
 		instanceid=instanceid,
 		channel=channel
 	)

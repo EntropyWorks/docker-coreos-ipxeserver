@@ -1,6 +1,6 @@
 #!ipxe
 
 set base-url http://{{channel}}.release.core-os.net/amd64-usr/current
-kernel ${base-url}/coreos_production_pxe.vmlinuz cloud-config-url={{url_for('coreos_cloudconfig', userid=userid, sshkeyname=sshkeyname, instanceid=instanceid, _external=True)}}
+kernel ${base-url}/coreos_production_pxe.vmlinuz {{ 'coreos.autologin' if autologin }} sshkey="{{sshkey}}" cloud-config-url={{url_for('coreos_cloudconfig', userid=userid, sshkeyname=sshkeyname, instanceid=instanceid, _external=True)}}
 initrd ${base-url}/coreos_production_pxe_image.cpio.gz
 boot
